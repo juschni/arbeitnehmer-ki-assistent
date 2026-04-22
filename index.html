@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArbeitnehmerKI Assistent</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f1a; color: #fff; }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 80px 20px;
+      text-align: center;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    header .badge {
+      display: inline-block;
+      background: #4f46e5;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    header p {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(79,70,229,0.4);
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(79,70,229,0.6);
+    }
+
+    .features {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: #1e1e32;
+      border: 1px solid #2a2a4a;
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: border-color 0.2s;
+    }
+    .feature-card:hover { border-color: #4f46e5; }
+    .feature-card .icon { font-size: 2rem; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: #e2e8f0; }
+    .feature-card p { font-size: 0.95rem; color: #94a3b8; line-height: 1.6; }
+
+    .cta-section {
+      text-align: center;
+      padding: 80px 20px;
+      background: #1a1a2e;
+      border-top: 1px solid #2a2a4a;
+    }
+    .cta-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #e2e8f0;
+    }
+    .cta-section p {
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #475569;
+      font-size: 0.85rem;
+      border-top: 1px solid #1e1e32;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Kostenlos & Sofort nutzbar</div>
+    <h1>Dein KI-Assistent fuer<br>Job & Karriere</h1>
+    <p>Bewerbungsschreiben optimieren, Vorstellungsgespraeche vorbereiten, Arbeitnehmerrechte verstehen – dein persoenlicher KI-Assistent ist rund um die Uhr fuer dich da.</p>
+    <a class="cta-btn" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">Jetzt kostenlos ausprobieren &rarr;</a>
+  </header>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="icon">&#128196;</div>
+      <h3>Bewerbung optimieren</h3>
+      <p>Lass dein Anschreiben und deinen Lebenslauf von der KI pruefen und verbessern – in Minuten statt Stunden.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">&#127942;</div>
+      <h3>Interview-Vorbereitung</h3>
+      <p>Uebe typische Vorstellungsgesprachsfragen und erhalte direktes Feedback auf deine Antworten.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">&#9878;</div>
+      <h3>Arbeitnehmerrechte</h3>
+      <p>Fragen zu Kuendigung, Urlaub, Ueberstunden oder Gehaltsverhandlung? Die KI erklaert dir deine Rechte verstaendlich.</p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Bereit fuer deinen naechsten Karriereschritt?</h2>
+    <p>Keine Anmeldung, kein Abo – einfach losschreiben.</p>
+    <a class="cta-btn" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">KI-Assistent starten &rarr;</a>
+  </section>
+
+  <footer>
+    &copy; 2026 ArbeitnehmerKI Assistent &mdash; Kostenlos, anonym, sofort einsatzbereit.
+  </footer>
+
+</body>
+</html>
