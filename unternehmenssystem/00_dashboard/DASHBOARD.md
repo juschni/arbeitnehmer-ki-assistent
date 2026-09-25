@@ -2,20 +2,21 @@
 
 ## Projektstatus
 
-- **Phase:** Sprint 0
+- **Phase:** Monetarisierungs-Vorbereitung
 - **Modus:** Produktionsmodus
-- **Stand:** 2026-07-02
-- **Ziel:** Erstes testbares Arbeitnehmer-GPT auf Basis eigener Methodik
+- **Stand:** 2026-09-25
+- **Ziel:** CareerAI mit klarem Freemium + 19 € Boost live monetarisierbar machen
 
 ## Aktive Artefakte
 
 | ID | Artefakt | Status | Nächster Schritt |
 |---|---|---|---|
 | A-001 | Unternehmens-Charta | in Arbeit | v0.2 verdichten |
-| A-002 | Marken-DNA | in Arbeit | Substanz ergänzen |
-| M-001 | Arbeitnehmer-Methodik | aktiv | v0.1 finalisieren |
-| GPT-001 | Arbeitnehmer-Kompass / Arbeitstitel | offen | Prompt bauen |
-| T-001 | Testfall Freund | offen | Feedbackbogen erstellen |
+| M-001 | Arbeitnehmer-Methodik | aktiv | finalisieren |
+| GPT-001 | Arbeitnehmer-Kompass | offen | Premium-Prompt bauen |
+| MON-001 | Monetarisierungsmodell | fertig | Preise freigeben |
+| MON-002 | Landingpage Pricing | fertig | Checkout anbinden |
+| MON-003 | Rechtstexte (Disclaimer) | vorbereitet | Impressum + DSGVO + AGB |
 
 ## Beschlossene Arbeitsregeln
 
@@ -24,7 +25,8 @@
 - Feedback schlägt Vermutung.
 - Versionen schlagen Visionen.
 - Aktualität vor Output bei deutschem Arbeitsrecht.
+- Preis und Leistung bleiben nachvollziehbar.
 
 ## Nächster Output
 
-**M-001 Arbeitnehmer-Methodik v0.1**
+**Checkout + Zugangslogik freischalten** (nach Preis-Bestätigung)
