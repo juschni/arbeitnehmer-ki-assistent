@@ -4,63 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CareerAI – Arbeitnehmer-Kompass mit 20 Jahren HR-Praxis</title>
+  <meta name="description" content="Klarheit in deiner beruflichen Situation. 20 Jahre Personalarbeit, Theorie + Praxis, individuelle Fälle. Orientierung statt Rechtsberatung." />
   <style>
+    :root {
+      --bg1: #07071a;
+      --bg2: #12122e;
+      --bg3: #1e1238;
+      --card: rgba(28, 28, 58, 0.65);
+      --border: rgba(167, 139, 250, 0.18);
+      --border-strong: rgba(124, 58, 237, 0.55);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #a78bfa;
+      --pink: #ec4899;
+      --grad: linear-gradient(135deg, #7c3aed, #ec4899);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0a0a1f 0%, #1a1a3e 50%, #2d1b4e 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 45%, var(--bg3) 100%);
       background-attachment: fixed;
-      color: #fff;
-      line-height: 1.6;
+      color: var(--text);
+      line-height: 1.65;
       overflow-x: hidden;
     }
 
+    /* Nav */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(15, 15, 30, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8, 8, 22, 0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       z-index: 1000;
-      padding: 16px 0;
+      padding: 14px 0;
     }
     nav .container {
-      max-width: 1200px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    nav .logo { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; }
-    nav .logo span { background: linear-gradient(135deg, #a78bfa, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    nav .cta-nav {
-      background: linear-gradient(135deg, #7c3aed, #ec4899);
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 10px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(124,58,237,0.3);
+    nav .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
     }
-    nav .cta-nav:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(124,58,237,0.5); }
+    nav .logo span {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav .badge-test {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: #c4b5fd;
+      background: rgba(167,139,250,0.12);
+      border: 1px solid rgba(167,139,250,0.28);
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+    nav a.nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a.nav-link:hover { color: #fff; }
 
+    /* Hero */
     .hero {
-      padding: 160px 24px 80px;
+      padding: 150px 24px 70px;
       text-align: center;
-      max-width: 900px;
+      max-width: 860px;
       margin: 0 auto;
     }
     .hero .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(167,139,250,0.12);
-      border: 1px solid rgba(167,139,250,0.3);
+      background: rgba(167,139,250,0.1);
+      border: 1px solid rgba(167,139,250,0.28);
       color: #c4b5fd;
       font-size: 13px;
       font-weight: 600;
@@ -69,228 +106,296 @@
       margin-bottom: 28px;
     }
     .hero .badge .dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       background: #a78bfa;
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
     }
     .hero h1 {
-      font-size: clamp(2.3rem, 5.5vw, 3.8rem);
+      font-size: clamp(2.4rem, 5.5vw, 3.9rem);
       font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 24px;
-      letter-spacing: -1.2px;
+      line-height: 1.12;
+      margin-bottom: 22px;
+      letter-spacing: -1.4px;
     }
     .hero h1 .gradient {
-      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #f59e0b 100%);
+      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 55%, #f59e0b 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.18rem;
       color: #cbd5e1;
-      max-width: 680px;
+      max-width: 640px;
       margin: 0 auto 36px;
       line-height: 1.7;
     }
     .hero .cta-primary {
       display: inline-block;
-      background: linear-gradient(135deg, #7c3aed, #ec4899);
+      background: var(--grad);
       color: #fff;
       font-size: 1.1rem;
       font-weight: 700;
-      padding: 18px 44px;
+      padding: 17px 40px;
       border-radius: 12px;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.3s;
-      box-shadow: 0 8px 32px rgba(124,58,237,0.4);
+      box-shadow: 0 10px 36px rgba(124,58,237,0.4);
+      transition: transform 0.2s, box-shadow 0.25s;
     }
-    .hero .cta-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(124,58,237,0.6); }
+    .hero .cta-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 44px rgba(124,58,237,0.55);
+    }
+    .hero .cta-note {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
 
+    /* Social proof */
     .social-proof {
       text-align: center;
-      padding: 28px 24px;
-      color: #94a3b8;
+      padding: 20px 24px 10px;
+      color: var(--muted);
       font-size: 0.95rem;
     }
     .social-proof .stat {
       display: inline-block;
-      margin: 0 14px;
+      margin: 0 16px;
       font-weight: 600;
     }
-    .social-proof .stat span { color: #a78bfa; }
+    .social-proof .stat span { color: var(--accent); }
 
+    /* Features */
     .features {
-      max-width: 1100px;
-      margin: 60px auto;
+      max-width: 1080px;
+      margin: 70px auto 20px;
       padding: 0 24px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
+      gap: 24px;
     }
     .feature-card {
-      background: rgba(30,30,60,0.5);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(167,139,250,0.15);
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 36px 32px;
-      transition: border-color 0.3s, transform 0.3s;
+      padding: 36px 30px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
-    .feature-card:hover { border-color: #7c3aed; transform: translateY(-6px); }
-    .feature-card .icon { font-size: 2.3rem; margin-bottom: 18px; }
-    .feature-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #e2e8f0; }
-    .feature-card p { font-size: 1rem; color: #cbd5e1; line-height: 1.7; }
+    .feature-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    }
+    .feature-card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .feature-card h3 {
+      font-size: 1.22rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #e2e8f0;
+    }
+    .feature-card p {
+      font-size: 1rem;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
 
+    /* Why section */
     .why {
-      max-width: 800px;
-      margin: 80px auto;
+      max-width: 720px;
+      margin: 90px auto 30px;
       padding: 0 24px;
       text-align: center;
     }
     .why h2 {
-      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+      font-size: clamp(1.7rem, 3.5vw, 2.35rem);
       font-weight: 800;
       margin-bottom: 20px;
+      letter-spacing: -0.5px;
     }
     .why p {
       color: #cbd5e1;
-      font-size: 1.1rem;
+      font-size: 1.12rem;
       line-height: 1.75;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
+    /* Pricing */
     .pricing {
-      max-width: 1000px;
+      max-width: 960px;
       margin: 80px auto;
       padding: 0 24px;
       text-align: center;
     }
     .pricing h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-size: clamp(1.75rem, 3.8vw, 2.4rem);
       font-weight: 800;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .pricing .sub {
-      color: #94a3b8;
-      margin-bottom: 48px;
+      color: var(--muted);
+      margin-bottom: 44px;
       font-size: 1.05rem;
     }
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
+      gap: 26px;
+      align-items: stretch;
     }
     .price-card {
-      background: rgba(30,30,60,0.55);
-      border: 1px solid rgba(167,139,250,0.18);
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 40px 32px;
+      padding: 40px 30px;
       text-align: left;
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
     .price-card.featured {
-      border-color: #7c3aed;
-      box-shadow: 0 0 0 1px rgba(124,58,237,0.4), 0 20px 50px rgba(124,58,237,0.15);
+      border-color: var(--border-strong);
+      box-shadow: 0 0 0 1px rgba(124,58,237,0.35), 0 22px 50px rgba(124,58,237,0.12);
     }
     .price-card .badge-top {
       position: absolute;
-      top: -12px;
+      top: -13px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, #7c3aed, #ec4899);
+      background: var(--grad);
       color: #fff;
       font-size: 12px;
       font-weight: 700;
       padding: 6px 16px;
       border-radius: 999px;
+      white-space: nowrap;
     }
-    .price-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+    .price-card h3 {
+      font-size: 1.28rem;
+      margin-bottom: 6px;
+    }
     .price-card .price {
-      font-size: 2.3rem;
+      font-size: 2.35rem;
       font-weight: 800;
-      margin: 16px 0 8px;
+      margin: 14px 0 6px;
     }
     .price-card .price span {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
-      color: #94a3b8;
+      color: var(--muted);
     }
     .price-card ul {
       list-style: none;
-      margin: 24px 0 32px;
+      margin: 22px 0 28px;
       color: #cbd5e1;
+      flex-grow: 1;
     }
     .price-card ul li {
-      padding: 8px 0;
-      padding-left: 28px;
+      padding: 7px 0;
+      padding-left: 26px;
       position: relative;
+      font-size: 0.98rem;
     }
     .price-card ul li::before {
       content: "✓";
       position: absolute;
       left: 0;
-      color: #a78bfa;
+      color: var(--accent);
       font-weight: 700;
     }
     .price-card .btn {
       display: block;
       text-align: center;
-      padding: 14px 24px;
-      border-radius: 10px;
+      padding: 14px 22px;
+      border-radius: 11px;
       font-weight: 700;
       text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.2s, opacity 0.2s;
     }
     .price-card .btn-free {
       background: rgba(255,255,255,0.08);
       color: #e2e8f0;
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.14);
     }
-    .price-card .btn-paid {
-      background: linear-gradient(135deg, #7c3aed, #ec4899);
-      color: #fff;
-      box-shadow: 0 6px 24px rgba(124,58,237,0.35);
+    .price-card .btn-free:hover {
+      background: rgba(255,255,255,0.13);
+      transform: translateY(-1px);
+    }
+    .price-card .btn-disabled {
+      background: rgba(124,58,237,0.25);
+      color: #c4b5fd;
+      border: 1px solid rgba(124,58,237,0.35);
+      cursor: default;
+      opacity: 0.85;
+    }
+    .price-card .btn-note {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
     }
 
+    /* CTA */
     .cta-section {
       text-align: center;
-      padding: 80px 24px;
-      background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(236,72,153,0.08));
+      padding: 90px 24px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.07), rgba(236,72,153,0.07));
       border-top: 1px solid rgba(167,139,250,0.1);
       border-bottom: 1px solid rgba(167,139,250,0.1);
+      margin-top: 40px;
     }
     .cta-section h2 {
-      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-size: clamp(1.7rem, 3.5vw, 2.35rem);
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
-    .cta-section p { color: #cbd5e1; margin-bottom: 28px; font-size: 1.1rem; }
+    .cta-section p {
+      color: #cbd5e1;
+      margin-bottom: 28px;
+      font-size: 1.1rem;
+    }
 
+    /* Disclaimer */
     .disclaimer {
-      max-width: 720px;
-      margin: 40px auto;
+      max-width: 700px;
+      margin: 48px auto 20px;
       padding: 0 24px;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: #64748b;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      padding: 32px 24px;
+      padding: 36px 24px 48px;
       color: #64748b;
       font-size: 0.9rem;
       border-top: 1px solid rgba(255,255,255,0.05);
     }
+    footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+    footer a:hover { color: #c4b5fd; }
 
-    @media (max-width: 768px) {
-      .hero { padding-top: 120px; }
+    @media (max-width: 640px) {
+      .hero { padding-top: 130px; }
       .social-proof .stat { display: block; margin: 8px 0; }
+      nav .badge-test { display: none; }
     }
   </style>
 </head>
@@ -299,22 +404,26 @@
   <nav>
     <div class="container">
       <div class="logo">Career<span>AI</span></div>
-      <a class="cta-nav" href="#pricing">Preise</a>
+      <div class="nav-right">
+        <span class="badge-test">Testphase</span>
+        <a class="nav-link" href="#pricing">Preise</a>
+      </div>
     </div>
   </nav>
 
   <section class="hero">
     <div class="badge">
       <span class="dot"></span>
-      20 Jahre Personalarbeit • Theorie + Praxis
+      20 Jahre Personalarbeit · Theorie + Praxis
     </div>
     <h1>
       Klarheit in deiner<br><span class="gradient">beruflichen Situation</span>
     </h1>
     <p>
-      Jeder Fall ist individuell. Hier bekommst du Orientierung von jemandem, der 20 Jahre auf der Unternehmensseite gearbeitet hat – und genau deshalb weiß, wie man zwischen den Zeilen liest und Transparenz schafft.
+      Jeder Fall ist individuell. Hier bekommst du Orientierung von jemandem, der 20 Jahre auf der Unternehmensseite gearbeitet hat – und deshalb weiß, wie man zwischen den Zeilen liest und Transparenz schafft.
     </p>
-    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">Kostenlos starten →</a>
+    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank" rel="noopener">Kostenlos starten →</a>
+    <p class="cta-note">Aktuell in der Testphase · Feedback willkommen</p>
   </section>
 
   <div class="social-proof">
@@ -325,17 +434,17 @@
 
   <section class="features">
     <div class="feature-card">
-      <div class="icon">🔍</div>
+      <span class="icon">🔍</span>
       <h3>Dein Fall, nicht die Theorie</h3>
       <p>In der Theorie steht oft das eine. In der Praxis zählt etwas anderes. Hier wird beides verbunden – damit du verstehst, was in deiner konkreten Situation wirklich relevant ist.</p>
     </div>
     <div class="feature-card">
-      <div class="icon">👁️</div>
+      <span class="icon">👁️</span>
       <h3>Zwischen den Zeilen lesen</h3>
       <p>20 Jahre Personalarbeit bedeuten: Ich kenne die Denke der anderen Seite. Genau diese Transparenz bekommst du – klar, ruhig und ohne Umschweife.</p>
     </div>
     <div class="feature-card">
-      <div class="icon">🧭</div>
+      <span class="icon">🧭</span>
       <h3>Vorbereitung statt Abhängigkeit</h3>
       <p>Keine Rechtsberatung. Aber eine saubere Vorbereitung, damit du – falls nötig – mit klaren Unterlagen und Fragen zum Anwalt oder zur Gewerkschaft gehen kannst.</p>
     </div>
@@ -344,18 +453,18 @@
   <section class="why">
     <h2>Warum das anders ist</h2>
     <p>
-      Viele Assistenten liefern allgemeine Antworten. Hier geht es um deinen konkreten Fall.  
+      Viele Assistenten liefern allgemeine Antworten. Hier geht es um deinen konkreten Fall.
       Auch wenn du es noch nicht genau in Worte fassen kannst – der Assistent hilft dir, es zu sortieren.
     </p>
     <p>
-      Klar. Präzise. Ohne viel Blabla.  
+      Klar. Präzise. Ohne viel Blabla.<br>
       Und immer mit dem Ziel: Du sollst danach handlungsfähiger sein als vorher.
     </p>
   </section>
 
   <section class="pricing" id="pricing">
     <h2>Einfache Preise. Klare Leistung.</h2>
-    <p class="sub">Kein Abo-Zwang. Keine versteckten Kosten.</p>
+    <p class="sub">Aktuell in der Testphase – der Boost kommt nach dem Feedback.</p>
 
     <div class="pricing-grid">
       <div class="price-card">
@@ -367,11 +476,11 @@
           <li>Sofort nutzbar, keine Anmeldung</li>
           <li>Orientierung & Vorbereitung</li>
         </ul>
-        <a class="btn btn-free" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">Kostenlos starten</a>
+        <a class="btn btn-free" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank" rel="noopener">Kostenlos starten</a>
       </div>
 
       <div class="price-card featured">
-        <div class="badge-top">Empfohlen</div>
+        <div class="badge-top">Demnächst</div>
         <h3>Karriere-Boost</h3>
         <div class="price">19 € <span>einmalig</span></div>
         <ul>
@@ -381,25 +490,28 @@
           <li>Vorbereitung für Anwalt / nächste Schritte</li>
           <li>30 Tage Premium-Zugang</li>
         </ul>
-        <a class="btn btn-paid" href="#" id="buy-boost">Jetzt freischalten – 19 €</a>
+        <span class="btn btn-disabled">In der Testphase</span>
+        <span class="btn-note">Wird nach dem Feedback freigeschaltet</span>
       </div>
     </div>
   </section>
 
   <section class="cta-section">
     <h2>Bereit für mehr Klarheit?</h2>
-    <p>Starte kostenlos. Wenn du tiefer einsteigen willst, ist der Boost da.</p>
-    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">Kostenlos testen →</a>
+    <p>Starte kostenlos. Dein Feedback hilft, den Assistenten besser zu machen.</p>
+    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank" rel="noopener">Kostenlos testen →</a>
   </section>
 
   <p class="disclaimer">
-    Dieser Dienst bietet Orientierung, Strukturierung und Vorbereitung zu arbeitsbezogenen Themen.  
+    Dieser Dienst bietet Orientierung, Strukturierung und Vorbereitung zu arbeitsbezogenen Themen.<br>
     <strong>Keine Rechtsberatung.</strong> Die Inhalte ersetzen keine individuelle Beratung durch einen Rechtsanwalt, eine Gewerkschaft oder eine zuständige Behörde.
   </p>
 
   <footer>
-    © 2026 CareerAI • Made with ❤️ in Würzburg<br>
-    <small>Impressum · Datenschutz · AGB (folgt)</small>
+    © 2026 CareerAI · Made with ❤️ in Würzburg<br>
+    <small style="margin-top: 8px; display: inline-block;">
+      <a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a>
+    </small>
   </footer>
 
 </body>
