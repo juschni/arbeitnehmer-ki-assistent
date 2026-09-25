@@ -16,7 +16,6 @@
       overflow-x: hidden;
     }
 
-    /* Nav */
     nav {
       position: fixed;
       top: 0;
@@ -50,9 +49,8 @@
     }
     nav .cta-nav:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(124,58,237,0.5); }
 
-    /* Hero */
     .hero {
-      padding: 160px 24px 100px;
+      padding: 160px 24px 80px;
       text-align: center;
       max-width: 900px;
       margin: 0 auto;
@@ -127,10 +125,9 @@
     .hero .cta-primary:hover::before { left: 100%; }
     .hero .cta-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(124,58,237,0.6); }
 
-    /* Social Proof */
     .social-proof {
       text-align: center;
-      padding: 40px 24px;
+      padding: 30px 24px;
       color: #94a3b8;
       font-size: 0.9rem;
     }
@@ -141,10 +138,9 @@
     }
     .social-proof .stat span { color: #a78bfa; font-size: 1.1rem; }
 
-    /* Features */
     .features {
       max-width: 1100px;
-      margin: 80px auto;
+      margin: 60px auto;
       padding: 0 24px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -167,23 +163,135 @@
     .feature-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: #e2e8f0; }
     .feature-card p { font-size: 1rem; color: #cbd5e1; line-height: 1.7; }
 
-    /* CTA Section */
+    /* Pricing */
+    .pricing {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .pricing h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .pricing .sub {
+      color: #94a3b8;
+      margin-bottom: 48px;
+      font-size: 1.05rem;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      align-items: stretch;
+    }
+    .price-card {
+      background: rgba(30,30,60,0.55);
+      border: 1px solid rgba(167,139,250,0.18);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: left;
+      position: relative;
+    }
+    .price-card.featured {
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 1px rgba(124,58,237,0.4), 0 20px 50px rgba(124,58,237,0.15);
+    }
+    .price-card .badge-top {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #7c3aed, #ec4899);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+    .price-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+    .price-card .price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin: 16px 0 8px;
+    }
+    .price-card .price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+    .price-card ul {
+      list-style: none;
+      margin: 24px 0 32px;
+      color: #cbd5e1;
+    }
+    .price-card ul li {
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+    }
+    .price-card ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #a78bfa;
+      font-weight: 700;
+    }
+    .price-card .btn {
+      display: block;
+      text-align: center;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .price-card .btn-free {
+      background: rgba(255,255,255,0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .price-card .btn-free:hover {
+      background: rgba(255,255,255,0.12);
+    }
+    .price-card .btn-paid {
+      background: linear-gradient(135deg, #7c3aed, #ec4899);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(124,58,237,0.35);
+    }
+    .price-card .btn-paid:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(124,58,237,0.5);
+    }
+
     .cta-section {
       text-align: center;
-      padding: 100px 24px;
+      padding: 80px 24px;
       background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(236,72,153,0.08));
       border-top: 1px solid rgba(167,139,250,0.1);
       border-bottom: 1px solid rgba(167,139,250,0.1);
     }
     .cta-section h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
       font-weight: 800;
       margin-bottom: 16px;
-      letter-spacing: -1px;
     }
-    .cta-section p { color: #cbd5e1; margin-bottom: 36px; font-size: 1.1rem; }
+    .cta-section p { color: #cbd5e1; margin-bottom: 28px; font-size: 1.1rem; }
 
-    /* Footer */
+    .disclaimer {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
     footer {
       text-align: center;
       padding: 32px 24px;
@@ -192,7 +300,6 @@
       border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .hero { padding-top: 120px; }
       .social-proof .stat { display: block; margin: 8px 0; }
@@ -204,14 +311,14 @@
   <nav>
     <div class="container">
       <div class="logo">Career<span>AI</span></div>
-      <a class="cta-nav" href="#app">Jetzt starten</a>
+      <a class="cta-nav" href="#pricing">Preise</a>
     </div>
   </nav>
 
   <section class="hero">
     <div class="badge">
       <span class="dot"></span>
-      100% kostenlos • Keine Anmeldung
+      Kostenlos starten • Keine Anmeldung nötig
     </div>
     <h1>
       Dein <span class="gradient">KI-Karriere-Boost</span><br>in Echtzeit
@@ -219,13 +326,13 @@
     <p>
       Bewerbungen schreiben, Interview-Skills trainieren, Gehaltsverhandlungen vorbereiten – mit KI, die wirklich versteht, was du brauchst.
     </p>
-    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank" id="app">App jetzt starten →</a>
+    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank" id="app">Kostenlos starten →</a>
   </section>
 
   <div class="social-proof">
     <div class="stat"><span>∞</span> Anfragen möglich</div>
     <div class="stat"><span>24/7</span> verfügbar</div>
-    <div class="stat"><span>0€</span> Kosten</div>
+    <div class="stat"><span>Orientierung</span> statt Rechtsberatung</div>
   </div>
 
   <section class="features">
@@ -246,14 +353,53 @@
     </div>
   </section>
 
-  <section class="cta-section">
-    <h2>Bereit für den nächsten Karriereschritt?</h2>
-    <p>Keine App-Installation, keine Registrierung – einfach lostippen.</p>
-    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">Jetzt KI-Assistenten testen →</a>
+  <section class="pricing" id="pricing">
+    <h2>Einfache Preise. Klare Leistung.</h2>
+    <p class="sub">Kein Abo-Zwang. Keine versteckten Kosten. Du entscheidest.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Basis</h3>
+        <div class="price">0 € <span>für immer</span></div>
+        <ul>
+          <li>Unbegrenzte grundlegende Fragen</li>
+          <li>Klare Antwortstruktur</li>
+          <li>Sofort nutzbar, keine Anmeldung</li>
+          <li>Orientierung & Vorbereitung</li>
+        </ul>
+        <a class="btn btn-free" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">Kostenlos starten</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="badge-top">Empfohlen</div>
+        <h3>Karriere-Boost</h3>
+        <div class="price">19 € <span>einmalig</span></div>
+        <ul>
+          <li>Alles aus Basis</li>
+          <li>Dokumenten-Upload (Zeugnis, Vertrag, Abmahnung …)</li>
+          <li>Formulierungshilfe (Anschreiben, Widerspruch, Verhandlung)</li>
+          <li>Tiefere Analysen + PDF-Export</li>
+          <li>30 Tage Premium-Zugang</li>
+        </ul>
+        <a class="btn btn-paid" href="#" id="buy-boost">Jetzt freischalten – 19 €</a>
+      </div>
+    </div>
   </section>
 
+  <section class="cta-section">
+    <h2>Bereit für den nächsten Karriereschritt?</h2>
+    <p>Starte kostenlos oder hole dir den Boost – du behältst die Kontrolle.</p>
+    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">Kostenlos testen →</a>
+  </section>
+
+  <p class="disclaimer">
+    Dieser Dienst bietet Orientierung, Strukturierung und Vorbereitung zu arbeitsbezogenen Themen. 
+    <strong>Keine Rechtsberatung.</strong> Die Inhalte ersetzen keine individuelle Beratung durch einen Rechtsanwalt, eine Gewerkschaft oder eine zuständige Behörde.
+  </p>
+
   <footer>
-    © 2026 CareerAI • Powered by Open-Source AI • Made with ❤️ in Würzburg
+    © 2026 CareerAI • Made with ❤️ in Würzburg<br>
+    <small>Impressum · Datenschutz · AGB (folgt)</small>
   </footer>
 
 </body>
