@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CareerAI – Dein KI-Karriere-Assistent</title>
+  <title>CareerAI – Arbeitnehmer-Kompass mit 20 Jahren HR-Praxis</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -80,11 +80,11 @@
       50% { opacity: 0.4; }
     }
     .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-size: clamp(2.3rem, 5.5vw, 3.8rem);
       font-weight: 900;
-      line-height: 1.1;
+      line-height: 1.15;
       margin-bottom: 24px;
-      letter-spacing: -1.5px;
+      letter-spacing: -1.2px;
     }
     .hero h1 .gradient {
       background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #f59e0b 100%);
@@ -92,10 +92,10 @@
       -webkit-text-fill-color: transparent;
     }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: #cbd5e1;
-      max-width: 650px;
-      margin: 0 auto 40px;
+      max-width: 680px;
+      margin: 0 auto 36px;
       line-height: 1.7;
     }
     .hero .cta-primary {
@@ -109,34 +109,21 @@
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.3s;
       box-shadow: 0 8px 32px rgba(124,58,237,0.4);
-      position: relative;
-      overflow: hidden;
     }
-    .hero .cta-primary::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
-    }
-    .hero .cta-primary:hover::before { left: 100%; }
     .hero .cta-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(124,58,237,0.6); }
 
     .social-proof {
       text-align: center;
-      padding: 30px 24px;
+      padding: 28px 24px;
       color: #94a3b8;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
     .social-proof .stat {
       display: inline-block;
-      margin: 0 16px;
+      margin: 0 14px;
       font-weight: 600;
     }
-    .social-proof .stat span { color: #a78bfa; font-size: 1.1rem; }
+    .social-proof .stat span { color: #a78bfa; }
 
     .features {
       max-width: 1100px;
@@ -155,15 +142,28 @@
       transition: border-color 0.3s, transform 0.3s;
     }
     .feature-card:hover { border-color: #7c3aed; transform: translateY(-6px); }
-    .feature-card .icon {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 4px 12px rgba(167,139,250,0.3));
-    }
-    .feature-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: #e2e8f0; }
+    .feature-card .icon { font-size: 2.3rem; margin-bottom: 18px; }
+    .feature-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #e2e8f0; }
     .feature-card p { font-size: 1rem; color: #cbd5e1; line-height: 1.7; }
 
-    /* Pricing */
+    .why {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .why h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .why p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
     .pricing {
       max-width: 1000px;
       margin: 80px auto;
@@ -171,7 +171,7 @@
       text-align: center;
     }
     .pricing h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       font-weight: 800;
       margin-bottom: 12px;
     }
@@ -184,7 +184,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 28px;
-      align-items: stretch;
     }
     .price-card {
       background: rgba(30,30,60,0.55);
@@ -210,12 +209,9 @@
       padding: 6px 16px;
       border-radius: 999px;
     }
-    .price-card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 8px;
-    }
+    .price-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
     .price-card .price {
-      font-size: 2.4rem;
+      font-size: 2.3rem;
       font-weight: 800;
       margin: 16px 0 8px;
     }
@@ -248,24 +244,16 @@
       border-radius: 10px;
       font-weight: 700;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
     .price-card .btn-free {
       background: rgba(255,255,255,0.08);
       color: #e2e8f0;
       border: 1px solid rgba(255,255,255,0.15);
     }
-    .price-card .btn-free:hover {
-      background: rgba(255,255,255,0.12);
-    }
     .price-card .btn-paid {
       background: linear-gradient(135deg, #7c3aed, #ec4899);
       color: #fff;
       box-shadow: 0 6px 24px rgba(124,58,237,0.35);
-    }
-    .price-card .btn-paid:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(124,58,237,0.5);
     }
 
     .cta-section {
@@ -276,14 +264,14 @@
       border-bottom: 1px solid rgba(167,139,250,0.1);
     }
     .cta-section h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
       font-weight: 800;
       margin-bottom: 16px;
     }
     .cta-section p { color: #cbd5e1; margin-bottom: 28px; font-size: 1.1rem; }
 
     .disclaimer {
-      max-width: 700px;
+      max-width: 720px;
       margin: 40px auto;
       padding: 0 24px;
       text-align: center;
@@ -318,44 +306,56 @@
   <section class="hero">
     <div class="badge">
       <span class="dot"></span>
-      Kostenlos starten • Keine Anmeldung nötig
+      20 Jahre Personalarbeit • Theorie + Praxis
     </div>
     <h1>
-      Dein <span class="gradient">KI-Karriere-Boost</span><br>in Echtzeit
+      Klarheit in deiner<br><span class="gradient">beruflichen Situation</span>
     </h1>
     <p>
-      Bewerbungen schreiben, Interview-Skills trainieren, Gehaltsverhandlungen vorbereiten – mit KI, die wirklich versteht, was du brauchst.
+      Jeder Fall ist individuell. Hier bekommst du Orientierung von jemandem, der 20 Jahre auf der Unternehmensseite gearbeitet hat – und genau deshalb weiß, wie man zwischen den Zeilen liest und Transparenz schafft.
     </p>
-    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank" id="app">Kostenlos starten →</a>
+    <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">Kostenlos starten →</a>
   </section>
 
   <div class="social-proof">
-    <div class="stat"><span>∞</span> Anfragen möglich</div>
-    <div class="stat"><span>24/7</span> verfügbar</div>
+    <div class="stat"><span>Individuell</span> statt Standard</div>
+    <div class="stat"><span>Klar & präzise</span> ohne Blabla</div>
     <div class="stat"><span>Orientierung</span> statt Rechtsberatung</div>
   </div>
 
   <section class="features">
     <div class="feature-card">
-      <div class="icon">✍️</div>
-      <h3>Bewerbung perfektionieren</h3>
-      <p>KI prüft Anschreiben, CV und Motivationsschreiben auf Wirkung, Struktur und Fehler – in Sekunden.</p>
+      <div class="icon">🔍</div>
+      <h3>Dein Fall, nicht die Theorie</h3>
+      <p>In der Theorie steht oft das eine. In der Praxis zählt etwas anderes. Hier wird beides verbunden – damit du verstehst, was in deiner konkreten Situation wirklich relevant ist.</p>
     </div>
     <div class="feature-card">
-      <div class="icon">🎯</div>
-      <h3>Interview-Training live</h3>
-      <p>Simuliere Vorstellungsgespräche, erhalte sofortiges Feedback und übe schwierige Fragen, bis sie sitzen.</p>
+      <div class="icon">👁️</div>
+      <h3>Zwischen den Zeilen lesen</h3>
+      <p>20 Jahre Personalarbeit bedeuten: Ich kenne die Denke der anderen Seite. Genau diese Transparenz bekommst du – klar, ruhig und ohne Umschweife.</p>
     </div>
     <div class="feature-card">
-      <div class="icon">💼</div>
-      <h3>Rechte & Verhandlung</h3>
-      <p>Verstehe deine Arbeitnehmerrechte, bereite Gehaltsverhandlungen vor und argumentiere fundiert.</p>
+      <div class="icon">🧭</div>
+      <h3>Vorbereitung statt Abhängigkeit</h3>
+      <p>Keine Rechtsberatung. Aber eine saubere Vorbereitung, damit du – falls nötig – mit klaren Unterlagen und Fragen zum Anwalt oder zur Gewerkschaft gehen kannst.</p>
     </div>
+  </section>
+
+  <section class="why">
+    <h2>Warum das anders ist</h2>
+    <p>
+      Viele Assistenten liefern allgemeine Antworten. Hier geht es um deinen konkreten Fall.  
+      Auch wenn du es noch nicht genau in Worte fassen kannst – der Assistent hilft dir, es zu sortieren.
+    </p>
+    <p>
+      Klar. Präzise. Ohne viel Blabla.  
+      Und immer mit dem Ziel: Du sollst danach handlungsfähiger sein als vorher.
+    </p>
   </section>
 
   <section class="pricing" id="pricing">
     <h2>Einfache Preise. Klare Leistung.</h2>
-    <p class="sub">Kein Abo-Zwang. Keine versteckten Kosten. Du entscheidest.</p>
+    <p class="sub">Kein Abo-Zwang. Keine versteckten Kosten.</p>
 
     <div class="pricing-grid">
       <div class="price-card">
@@ -363,7 +363,7 @@
         <div class="price">0 € <span>für immer</span></div>
         <ul>
           <li>Unbegrenzte grundlegende Fragen</li>
-          <li>Klare Antwortstruktur</li>
+          <li>Klare, strukturierte Antworten</li>
           <li>Sofort nutzbar, keine Anmeldung</li>
           <li>Orientierung & Vorbereitung</li>
         </ul>
@@ -376,9 +376,9 @@
         <div class="price">19 € <span>einmalig</span></div>
         <ul>
           <li>Alles aus Basis</li>
-          <li>Dokumenten-Upload (Zeugnis, Vertrag, Abmahnung …)</li>
-          <li>Formulierungshilfe (Anschreiben, Widerspruch, Verhandlung)</li>
-          <li>Tiefere Analysen + PDF-Export</li>
+          <li>Dokumenten-Upload & tiefere Analyse</li>
+          <li>Formulierungshilfe für Gespräche & Schreiben</li>
+          <li>Vorbereitung für Anwalt / nächste Schritte</li>
           <li>30 Tage Premium-Zugang</li>
         </ul>
         <a class="btn btn-paid" href="#" id="buy-boost">Jetzt freischalten – 19 €</a>
@@ -387,13 +387,13 @@
   </section>
 
   <section class="cta-section">
-    <h2>Bereit für den nächsten Karriereschritt?</h2>
-    <p>Starte kostenlos oder hole dir den Boost – du behältst die Kontrolle.</p>
+    <h2>Bereit für mehr Klarheit?</h2>
+    <p>Starte kostenlos. Wenn du tiefer einsteigen willst, ist der Boost da.</p>
     <a class="cta-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank">Kostenlos testen →</a>
   </section>
 
   <p class="disclaimer">
-    Dieser Dienst bietet Orientierung, Strukturierung und Vorbereitung zu arbeitsbezogenen Themen. 
+    Dieser Dienst bietet Orientierung, Strukturierung und Vorbereitung zu arbeitsbezogenen Themen.  
     <strong>Keine Rechtsberatung.</strong> Die Inhalte ersetzen keine individuelle Beratung durch einen Rechtsanwalt, eine Gewerkschaft oder eine zuständige Behörde.
   </p>
 
