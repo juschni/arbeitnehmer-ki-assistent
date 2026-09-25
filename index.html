@@ -5,302 +5,355 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CareerAI – Orientierung in beruflichen Situationen</title>
   <meta name="description" content="CareerAI: Praxisnahe Orientierung für Arbeitnehmer. Klar und präzise. Keine Rechtsberatung." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0b0b18;
-      --card: #141428;
-      --border: #2a2a45;
-      --text: #e8e8f0;
-      --muted: #9ca3af;
-      --accent: #8b7cf7;
+      --bg: #0c0c14;
+      --surface: #12121c;
+      --surface-2: #181824;
+      --border: #2a2a3a;
+      --border-soft: #22222f;
+      --text: #f0f0f5;
+      --muted: #8b8b9e;
+      --accent: #7c6cf0;
+      --accent-soft: rgba(124, 108, 240, 0.12);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
+    /* Nav */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(11, 11, 24, 0.92);
-      border-bottom: 1px solid var(--border);
+      background: rgba(12, 12, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
       z-index: 100;
-      padding: 14px 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
     }
-    nav .container {
-      max-width: 900px;
+    nav .inner {
+      width: 100%;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    nav .logo { font-size: 1.15rem; font-weight: 700; }
-    nav .logo span { color: var(--accent); }
-    nav .badge {
-      font-size: 12px;
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text);
+    }
+    .logo span { color: var(--accent); }
+    .badge {
+      font-size: 11px;
+      font-weight: 500;
       color: var(--muted);
       border: 1px solid var(--border);
       padding: 4px 10px;
-      border-radius: 6px;
+      border-radius: 20px;
+      letter-spacing: 0.2px;
     }
 
-    .hero {
-      padding: 140px 24px 60px;
-      max-width: 680px;
+    /* Main */
+    main {
+      max-width: 720px;
       margin: 0 auto;
-      text-align: left;
+      padding: 0 28px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 120px 0 64px;
     }
     .hero h1 {
-      font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+      font-size: clamp(1.85rem, 4vw, 2.4rem);
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 20px;
-      letter-spacing: -0.5px;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--muted);
-      margin-bottom: 32px;
-      line-height: 1.65;
-    }
-    .hero .cta {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    .hero .cta:hover { opacity: 0.9; }
-    .hero .note {
-      margin-top: 14px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .section {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 40px 24px;
-    }
-    .section h2 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .section p {
-      color: var(--muted);
-      margin-bottom: 14px;
-      font-size: 1.05rem;
-    }
-
-    .points {
-      list-style: none;
-      margin: 24px 0;
-    }
-    .points li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-      font-size: 1.05rem;
-    }
-    .points li:last-child { border-bottom: none; }
-    .points li strong {
-      display: block;
-      margin-bottom: 4px;
+      letter-spacing: -0.6px;
+      margin-bottom: 18px;
       color: var(--text);
     }
-    .points li span {
+    .hero .lead {
+      font-size: 1.05rem;
       color: var(--muted);
-      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 520px;
     }
-
-    .pricing {
-      max-width: 680px;
-      margin: 20px auto 0;
-      padding: 40px 24px;
-    }
-    .pricing h2 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .pricing .sub {
-      color: var(--muted);
-      margin-bottom: 28px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: inherit;
       font-size: 0.95rem;
-    }
-    .price-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      margin-bottom: 16px;
-    }
-    .price-box h3 {
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-    .price-box .amount {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin: 8px 0 16px;
-    }
-    .price-box .amount span {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--muted);
-    }
-    .price-box ul {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-    .price-box ul li {
-      padding: 5px 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-      padding-left: 18px;
-      position: relative;
-    }
-    .price-box ul li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-    .price-box .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 8px;
       font-weight: 600;
-      font-size: 0.95rem;
+      padding: 13px 26px;
+      border-radius: 8px;
       text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s, background 0.15s;
     }
-    .price-box .btn-primary {
+    .btn-primary {
       background: var(--accent);
       color: #fff;
     }
-    .price-box .btn-disabled {
+    .btn-primary:hover { opacity: 0.92; }
+    .btn-ghost {
       background: transparent;
       color: var(--muted);
       border: 1px solid var(--border);
       cursor: default;
     }
-
-    .disclaimer {
-      max-width: 680px;
-      margin: 40px auto;
-      padding: 0 24px;
+    .hero .note {
+      margin-top: 14px;
       font-size: 0.85rem;
-      color: #6b7280;
-      line-height: 1.5;
+      color: var(--muted);
     }
 
-    footer {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 30px 24px 50px;
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: var(--border-soft);
+      margin: 0;
+    }
+
+    /* Sections */
+    section {
+      padding: 56px 0;
+    }
+    section h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+
+    /* Feature list */
+    .feature {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .feature:last-child { border-bottom: none; }
+    .feature .label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .feature .desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* How */
+    .how p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    /* Pricing */
+    .price-cards {
+      display: grid;
+      gap: 16px;
+    }
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .price-card.highlight {
+      border-color: var(--border);
+      background: var(--surface-2);
+    }
+    .price-card .name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .price-card .amount {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+    .price-card .amount span {
       font-size: 0.85rem;
-      color: #6b7280;
-      border-top: 1px solid var(--border);
+      font-weight: 400;
+      color: var(--muted);
+    }
+    .price-card ul {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .price-card ul li {
+      font-size: 0.92rem;
+      color: var(--muted);
+      padding: 5px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+    .price-card ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.7;
+    }
+    .price-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      padding: 40px 0 20px;
+      font-size: 0.8rem;
+      color: #6b6b7b;
+      line-height: 1.55;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 28px 0 48px;
+      font-size: 0.8rem;
+      color: #6b6b7b;
+    }
+
+    @media (max-width: 560px) {
+      .feature {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      main { padding: 0 20px; }
+      nav .inner { padding: 0 20px; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <div class="container">
+    <div class="inner">
       <div class="logo">Career<span>AI</span></div>
       <span class="badge">Testphase</span>
     </div>
   </nav>
 
-  <section class="hero">
-    <h1>Klarheit in beruflichen Situationen</h1>
-    <p>
-      CareerAI bietet praxisnahe Orientierung für Arbeitnehmer.<br>
-      Theorie und Praxis. Individuelle Fälle. Klar und präzise.<br>
-      Keine Rechtsberatung.
-    </p>
-    <a class="cta" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank" rel="noopener">Kostenlos starten</a>
-    <p class="note">Testphase · Feedback willkommen</p>
-  </section>
+  <main>
 
-  <section class="section">
-    <h2>Was CareerAI leistet</h2>
-    <ul class="points">
-      <li>
-        <strong>Individuelle Einordnung</strong>
-        <span>Jeder Fall wird als Einzelfall behandelt. Theorie und Praxis werden verbunden.</span>
-      </li>
-      <li>
-        <strong>Praxisnahe Transparenz</strong>
-        <span>Aufgebaut auf langjähriger Personalarbeit. Einordnung statt Standardantworten.</span>
-      </li>
-      <li>
-        <strong>Vorbereitung statt Abhängigkeit</strong>
-        <span>Keine Rechtsberatung. Eine klare Vorbereitung, falls der Weg zum Anwalt oder zur Gewerkschaft nötig wird.</span>
-      </li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>So funktioniert es</h2>
-    <p>
-      Die Situation wird beschrieben – auch wenn sie noch nicht klar formuliert ist.
-      CareerAI sortiert, ordnet ein und zeigt nächste Schritte.
-    </p>
-    <p>
-      Klar. Präzise. Ohne unnötiges Gerede.
-    </p>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <h2>Preise</h2>
-    <p class="sub">Aktuell in der Testphase. Der Boost wird nach dem Feedback freigeschaltet.</p>
-
-    <div class="price-box">
-      <h3>Basis</h3>
-      <div class="amount">0 € <span>für immer</span></div>
-      <ul>
-        <li>Unbegrenzte grundlegende Fragen</li>
-        <li>Strukturierte Antworten</li>
-        <li>Keine Anmeldung nötig</li>
-      </ul>
+    <section class="hero">
+      <h1>Klarheit in beruflichen Situationen</h1>
+      <p class="lead">
+        CareerAI bietet praxisnahe Orientierung für Arbeitnehmer.<br>
+        Theorie und Praxis. Individuelle Fälle. Klar und präzise.<br>
+        Keine Rechtsberatung.
+      </p>
       <a class="btn btn-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank" rel="noopener">Kostenlos starten</a>
-    </div>
+      <p class="note">Testphase · Feedback willkommen</p>
+    </section>
 
-    <div class="price-box">
-      <h3>Karriere-Boost</h3>
-      <div class="amount">19 € <span>einmalig</span></div>
-      <ul>
-        <li>Dokument-Upload und tiefere Analyse</li>
-        <li>Formulierungshilfe</li>
-        <li>Vorbereitung für nächste Schritte</li>
-        <li>30 Tage Zugang</li>
-      </ul>
-      <span class="btn btn-disabled">In der Testphase</span>
-    </div>
-  </section>
+    <div class="divider"></div>
 
-  <p class="disclaimer">
-    Orientierung und Vorbereitung – keine Rechtsberatung.<br>
-    Ersetzt keine Beratung durch einen Anwalt, eine Gewerkschaft oder eine zuständige Behörde.
-  </p>
+    <section>
+      <h2>Was CareerAI leistet</h2>
+      <div class="feature">
+        <div class="label">Individuelle Einordnung</div>
+        <div class="desc">Jeder Fall wird als Einzelfall behandelt. Theorie und Praxis werden verbunden.</div>
+      </div>
+      <div class="feature">
+        <div class="label">Praxisnahe Transparenz</div>
+        <div class="desc">Aufgebaut auf langjähriger Personalarbeit. Einordnung statt Standardantworten.</div>
+      </div>
+      <div class="feature">
+        <div class="label">Vorbereitung statt Abhängigkeit</div>
+        <div class="desc">Keine Rechtsberatung. Eine klare Vorbereitung, falls der Weg zum Anwalt oder zur Gewerkschaft nötig wird.</div>
+      </div>
+    </section>
 
-  <footer>
-    © 2026 CareerAI · Würzburg<br>
-    Impressum · Datenschutz · AGB
-  </footer>
+    <div class="divider"></div>
+
+    <section class="how">
+      <h2>So funktioniert es</h2>
+      <p>
+        Die Situation wird beschrieben – auch wenn sie noch nicht klar formuliert ist.
+        CareerAI sortiert, ordnet ein und zeigt nächste Schritte.
+      </p>
+      <p>Klar. Präzise. Ohne unnötiges Gerede.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+      <h2>Preise</h2>
+      <p class="price-note">Aktuell in der Testphase. Der Boost wird nach dem Feedback freigeschaltet.</p>
+
+      <div class="price-cards">
+        <div class="price-card">
+          <div class="name">Basis</div>
+          <div class="amount">0 € <span>für immer</span></div>
+          <ul>
+            <li>Unbegrenzte grundlegende Fragen</li>
+            <li>Strukturierte Antworten</li>
+            <li>Keine Anmeldung nötig</li>
+          </ul>
+          <a class="btn btn-primary" href="https://huggingface.co/spaces/hrloopx/mein-chatgpt-assistent" target="_blank" rel="noopener">Kostenlos starten</a>
+        </div>
+
+        <div class="price-card highlight">
+          <div class="name">Karriere-Boost</div>
+          <div class="amount">19 € <span>einmalig</span></div>
+          <ul>
+            <li>Dokument-Upload und tiefere Analyse</li>
+            <li>Formulierungshilfe</li>
+            <li>Vorbereitung für nächste Schritte</li>
+            <li>30 Tage Zugang</li>
+          </ul>
+          <span class="btn btn-ghost">In der Testphase</span>
+        </div>
+      </div>
+    </section>
+
+    <p class="disclaimer">
+      Orientierung und Vorbereitung – keine Rechtsberatung.<br>
+      Ersetzt keine Beratung durch einen Anwalt, eine Gewerkschaft oder eine zuständige Behörde.
+    </p>
+
+    <footer>
+      © 2026 CareerAI · Würzburg<br>
+      Impressum · Datenschutz · AGB
+    </footer>
+
+  </main>
 
 </body>
 </html>
